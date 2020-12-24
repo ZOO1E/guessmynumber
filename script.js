@@ -17,10 +17,10 @@ const x = function() {
   console.log(23);
 };*/
 
-const secretNumber = Math.trunc(Math.random() * 20)+1; //decimal part는 잘라버림
+let secretNumber = Math.trunc(Math.random() * 20)+1; //decimal part는 잘라버림
 let score =20;
 
-document.querySelector('.number').textContent = secretNumber;
+
 document.querySelector(".check").addEventListener("click", function() {
   //이 함수는 click이 일어났을때
   const guess = Number(document.querySelector(".guess").value);
@@ -32,6 +32,7 @@ document.querySelector(".check").addEventListener("click", function() {
   
   //when player wins
   } else if (guess ===secretNumber){
+    document.querySelector('.number').textContent = secretNumber;
     document.querySelector(".message").textContent = "Correct Number!"
  document. querySelector('body').style.backgroundColor = '#60b347';
  document.querySelector('.number').style.width = '30rem';
@@ -60,4 +61,9 @@ document.querySelector(".check").addEventListener("click", function() {
   }
   //document.querySelector(".message").textContent = "Correct Number!";
 });
-document.querySelector
+document.querySelector('.again').addEventListener("click" , function(){
+  secretNumber = Math.trunc(Math.random() * 20)+1;
+   score = 20 ;
+   document. querySelector('body').style.backgroundColor = '#222',document.querySelector('.number').style.width = '15rem',
+
+});
